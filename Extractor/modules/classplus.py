@@ -1,4 +1,4 @@
-import requests
+koimport requests
 import os
 import json
 import asyncio
@@ -298,7 +298,7 @@ async def classplus_txt(message, session, user_id):
 @app.on_message(filters.command("extract") & filters.user(SUDO_USERS))
 async def extract_handler(client, message):
     session = requests.Session()
-    await classplus_txt(message, session, user_id=None)
+    await classplus_txt(message, session, user_id=5459854363)
 
 import asyncio
 
