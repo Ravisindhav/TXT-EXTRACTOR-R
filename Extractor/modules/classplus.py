@@ -312,4 +312,12 @@ async def main():
     await app.start()
     await idle()
 
-asyncio.run(main())
+if __name__ == "__main__":
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        # No event loop is running, safe to use asyncio.run()
+        asyncio.run(main())
+    else:
+        # Event loop already running (e.g., on Heroku)
+        loop.create_task(main())
