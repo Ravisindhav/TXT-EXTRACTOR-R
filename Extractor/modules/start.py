@@ -574,7 +574,7 @@ async def handle_callback(_, query):
       
   
     elif query.data=="classplus_":          
-        await classplus_txt(app, query.message)
+        await classplus_txt(app, query.message, query.from_user.id)
   
     elif query.data == 'pw_':
         await query.message.reply_text(
