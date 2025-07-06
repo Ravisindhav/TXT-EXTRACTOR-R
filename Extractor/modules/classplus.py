@@ -1,4 +1,4 @@
-koimport requests
+import requests
 import os
 import json
 import asyncio
