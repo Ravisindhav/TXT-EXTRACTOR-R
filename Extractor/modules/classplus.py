@@ -298,15 +298,18 @@ async def classplus_txt(message, session, user_id):
 @app.on_message(filters.command("extract") & filters.user(SUDO_USERS))
 async def extract_handler(client, message):
     session = requests.Session()
-    await classplus_txt(message, session, user_id=5459854363)
+    await classplus_txt(message, session, user_id=None)
 
+@app.on_message(filters.command("extract") & filters.user(SUDO_USERS))
+async def extract_handler(client, message):
+    session = requests.Session()
+    await classplus_txt(message, session, user_id=None)
+
+# âœ… Fix start+idle using asyncio properly
 import asyncio
 
 async def main():
     await app.start()
-    print("✅ Bot started!")
     await idle()
-    await app.stop()
 
-if __name__ == "__main__":
-    asyncio.run(main())
+asyncio.run(main())
