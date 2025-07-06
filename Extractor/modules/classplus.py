@@ -300,5 +300,13 @@ async def extract_handler(client, message):
     session = requests.Session()
     await classplus_txt(message, session, user_id=None)
 
-app.start()
-idle()
+import asyncio
+
+async def main():
+    await app.start()
+    print("✅ Bot started!")
+    await idle()
+    await app.stop()
+
+if __name__ == "__main__":
+    asyncio.run(main())
