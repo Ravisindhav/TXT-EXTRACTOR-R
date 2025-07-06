@@ -301,7 +301,7 @@ async def extract_handler(client, message):
     import requests
 
 session = requests.Session()
-await classplus_txt(query.message, session, user_id=None)
+await classplus_txt(app, query.message, query.from_user.id)
 
 # âœ… Fix start+idle using asyncio properly
 import asyncio
